@@ -1,0 +1,79 @@
+{
+  "name": "sharifuddin/laravel-smart-model-tracker",
+  "description": "Automatically handles created_by, updated_by, created_at, updated_at, and deleted_by for Eloquent models. Seamless user tracking with zero boilerplate code.",
+  "type": "library",
+  "keywords": [
+    "laravel",
+    "eloquent",
+    "model-tracker",
+    "user-tracking",
+    "audit-trail",
+    "created-by",
+    "updated-by",
+    "deleted-by",
+    "laravel-package",
+    "auto-tracking"
+  ],
+  "homepage": "https://github.com/sharifuddin/laravel-smart-model-tracker",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Sharif Uddin",
+      "email": "sharif.webpro@gmail.com",
+      "homepage": "https://sharifwebdev.github.io/",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.0",
+    "laravel/framework": "^8.0|^9.0|^10.0|^11.0|^12.0"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^6.0|^7.0|^8.0",
+    "phpunit/phpunit": "^9.0|^10.0",
+    "laravel/pint": "^1.0",
+    "friendsofphp/php-cs-fixer": "^3.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Sharifuddin\\LaravelSmartModelTracker\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Sharifuddin\\LaravelSmartModelTracker\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Sharifuddin\\LaravelSmartModelTracker\\Providers\\SmartModelTrackerServiceProvider"
+      ],
+      "aliases": {
+        "SmartModelTracker": "Sharifuddin\\LaravelSmartModelTracker\\Facades\\SmartModelTracker"
+      }
+    }
+  },
+  "scripts": {
+    "test": "vendor/bin/phpunit",
+    "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+    "analyse": "vendor/bin/phpstan analyse",
+    "format": "vendor/bin/php-cs-fixer fix --allow-risky=yes",
+    "lint": "vendor/bin/php-cs-fixer fix --dry-run --allow-risky=yes"
+  },
+  "scripts-descriptions": {
+    "test": "Run the test suite",
+    "test-coverage": "Generate test coverage report",
+    "analyse": "Run static analysis",
+    "format": "Format the code",
+    "lint": "Check code style without fixing"
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "pestphp/pest-plugin": true
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
